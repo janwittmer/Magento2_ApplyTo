@@ -1,6 +1,6 @@
 # "Apply To" Attribute Option for Magento 2.0
 
-Return back to the Magento 2.0 attribute settings "Apply To" option. Choose each product type that is associated with the attribute.
+Return back the Magento 2.0 attribute option "Apply To". Choose each product type that is associated with the attribute.
 
 ![alt tag](http://blog.belvg.com/wp-content/uploads/applyto.png)
 
@@ -21,6 +21,6 @@ Update root `composer.json` with
 }
 ```
 
-Run `conposer update`
+Run `composer update`
 
 Enable module with `php bin/magento module:enable BelVG_ApplyTo`
