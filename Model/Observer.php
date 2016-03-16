@@ -52,18 +52,51 @@ class Observer implements ObserverInterface
             ];
 
         $fieldset = $form->getElement('base_fieldset');
+
+        $fieldset->addField(
+            'default_apply_to',
+            'select',
+            [
+                'name' => 'default_apply_to',
+                'label' => __('Apply To'),
+                'title' => __('Apply To'),
+                'required' => true,
+                'onchange'=>'if(this.value == 1 ) {
+                $(\'apply_to\').removeAttribute(\'disabled\');
+                $(\'apply_to\').removeAttribute(\'style\')
+                } else {
+                $(\'apply_to\').setAttribute(\'disabled\',\'disabled\')
+                $(\'apply_to\').setAttribute(\'style\',\'display:none\')
+                }',
+                'value'=>($attributeObject->getApplyTo()!=null) ? 1 : 0,
+                'values' =>[
+                    0=> __('All Product Types'),
+                    1=> __('Selected Product Types')
+                ]
+            ]
+        );
+
+        $params =  [
+            'name' => 'apply_to[]',
+            'label' => __(''),
+            'title' => __(''),
+            'required' => false,
+            'value'=>($attributeObject->getApplyTo() == null) ? 'simple' : $attributeObject->getApplyTo(),
+            'values' =>$values,
+        ];
+
+        if($attributeObject->getApplyTo()==null){
+            $params['disabled']='disabled';
+            $params['style']='display:none';
+        }
+
+
         $fieldset->addField(
             'apply_to',
             'multiselect',
-            [
-                'name' => 'apply_to[]',
-                'label' => __('Apply to'),
-                'title' => __('Apply to'),
-                'required' => true,
-                'value'=>$attributeObject->getApplyTo(),
-                'values' =>$values
-            ]
+            $params
         );
+
         $observer->setForm($form);
         return $this;
     }
