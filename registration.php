@@ -12,7 +12,7 @@
  ********************************************************************
  * @category   BelVG
  * @package    BelVG_ApplyTo
- * @copyright  Copyright (c) 2010 - 2015 BelVG LLC. (http://www.belvg.com)
+ * @copyright  Copyright (c) 2010 - 2016 BelVG LLC. (http://www.belvg.com)
  * @license    http://store.belvg.com/BelVG-LICENSE-COMMUNITY.txt
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
