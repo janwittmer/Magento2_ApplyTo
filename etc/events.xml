@@ -17,6 +17,6 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="product_attribute_form_build_main_tab">
-        <observer name="advancedcomparison_product_attribute_form_build_main_tab" instance="BelVG\ApplyTo\Model\Observer" />
+        <observer name="applyto_product_attribute_form_build_main_tab" instance="BelVG\ApplyTo\Model\Observer" />
     </event>
 </config>
